@@ -1,0 +1,28 @@
+{% include 'base/header.html' %}
+
+{% block content %}
+
+    <div class="container">
+        <h4 style="text-align: center; margin-top: 20px; margin: bottom 20px;"> CAT LIST DATA</h4>
+      
+       <div class="row">
+            {% for obj in objects %}
+            <div class="col-lg-3">
+                <div class="card" style="min-height: 200px; cursor: pointer;">
+                    <p> Pet Name: {{obj.name}}</p>
+                    <img src="{{obj.image.url}}" alt="Image will come here" class="card-img-top" width="170 px">
+                    <p class="card-text"> </p>                    
+                    <p>Age: {{obj.age}}</p>
+                    <p><strong style="color: red;">Price:{{obj.price}} </strong></p>                    
+
+                </div>
+            </div>
+            {% endfor %}
+       </div> 
+
+
+    </div>
+
+{% endblock %}
+
+{% include 'base/footer.html' %}
